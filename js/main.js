@@ -293,19 +293,6 @@ if (textarea) {
     this.style.overflowY = 'hidden';
   });
 }
-const dropdownButtons = document.querySelectorAll('.form-control');
-const arrowIcons = document.querySelectorAll('.form-control__arrow-btn');
-if (arrowIcons) {
-  arrowIcons.forEach(arrowIcon => {
-    arrowIcon.addEventListener('click', e => {
-      e.stopPropagation();
-      const dropdownMenu = arrowIcon.closest('.form-control').nextElementSibling;
-      if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
-        dropdownMenu.classList.toggle('open');
-      }
-    });
-  });
-}
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelector(".dropdown-btn");
   const dropdown = document.querySelector(".dropdown");

@@ -21,6 +21,7 @@
   <div class="container-modal">
     <div class="buttons">
       <button class="button" data-path="reward-setting" data-animation="fadeInUp">Reward Setting</button>
+      <button class="button" data-path="connect-wallet" data-animation="fadeInUp">Connect wallet</button>
     </div>
 
     <div class="modal">
@@ -56,7 +57,22 @@
         </div>
       </div>
 
+      <!-- Connect wallet -->
+      <div class="modal__container" role="dialog" aria-modal="true" data-target="connect-wallet">
+        <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+          <svg class="modal__close-icon">
+            <use xlink:href="img/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <h2 class="modal__title">
+          Connect your wallet
+        </h2>
+        <div class="modal__body">
+          <button class="modal__button button" type="button">Claim reward and fee 298.4 USDT</button>
 
+        </div>
+
+      </div>
 
     </div>
   </div>

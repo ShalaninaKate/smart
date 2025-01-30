@@ -1030,6 +1030,25 @@ input:-webkit-autofill {
   }
 }
 
+.progressbar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.progressbar li {
+  height: 4px;
+  background: var(--dark-purple-50);
+  border-radius: 20px;
+}
+
+.progressbar li.active {
+  background: var(--robin-egg-blue);
+}
+
 .deals__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1749,4 +1768,19 @@ input:-webkit-autofill {
   line-height: 143%;
   text-align: center;
   color: var(--rose-quartz-400);
+}
+
+.story__progressbar {
+  margin-bottom: 1rem;
+}
+.story__title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 133%;
+}
+.story__text {
+  line-height: 143%;
+}
+.story__button {
+  margin-bottom: 1rem;
 }

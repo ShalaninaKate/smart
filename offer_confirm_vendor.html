@@ -6,7 +6,7 @@
   <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Offer candidates</title>
+  <title>Offer confirm vendor</title>
   <link rel="stylesheet" href="css/main.css">
 
 
@@ -50,14 +50,14 @@
             <input class="input__control" id="customer" type="text" name="" value="Вадим Мариупольский" readonly
               placeholder="">
             <label class="input__label" for="customer">Vendor</label>
-             <div class="input__actions">
+            <div class="input__actions">
 
-               <button class="input__btn">
+              <button class="input__btn">
                 <svg class="input__btn-icon input__btn-icon--arrow">
                   <use xlink:href="img/sprite.svg#arrow"></use>
                 </svg>
-               </button>
-             </div>
+              </button>
+            </div>
           </div>
 
           <div class="form__input input">
@@ -105,7 +105,8 @@
           </div>
           <div class="actions__block">
             <div class="actions__title">Confirm vendor and deposit reward</div>
-            <button class="actions__button button" type="button">Deposit reward</button>
+            <button class="actions__button button" type="button" data-path="connect-wallet"
+              data-animation="fadeInUp">Deposit reward</button>
           </div>
           <div class="actions__block">
             <div class="actions__title">Send the link in a message or attach to the task</div>
@@ -129,53 +130,72 @@
     </form>
   </div>
   </div>
-      <div class="modal">
-        <!-- Reward info -->
-        <div class="modal__container" role="dialog" aria-modal="true" data-target="reward-info">
-          <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
-            <svg class="modal__close-icon">
-              <use xlink:href="img/sprite.svg#close"></use>
-            </svg>
-          </button>
-          <h2 class="modal__title">
-            Reward and Fee
-          </h2>
-          <div class="modal__body">
+  <div class="modal">
+    <!-- Reward info -->
+    <div class="modal__container" role="dialog" aria-modal="true" data-target="reward-info">
+      <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h2 class="modal__title">
+        Reward and Fee
+      </h2>
+      <div class="modal__body">
 
-            <p class="modal__text"><strong>The reward is managed by a smart contract.</strong>The deal starts when the
-              vendor has confirmed the deal, the customer has
-              selected one vendor from those who have confirmed and transferred the reward to the smart contract.</p>
-            <p class="modal__text">When both agree that the deal is complete, the rewards are transferred to the
-              vendor's
-              account.</p>
-            <p class="modal__text">If disputes arise, an arbitrator (service administrator or expert) decides what to do
-              with the fee: return it to the
-              customer, transfer it to the vendor, split the reward, or put the deal back to work.</p>
-            <p class="modal__text"><strong>Fee</strong>$10 - Flat service fee for any deal <br> 2% min $8 - Non
-              refundable
-              Arbitrage Insurance</p>
-          </div>
+        <p class="modal__text"><strong>The reward is managed by a smart contract.</strong>The deal starts when the
+          vendor has confirmed the deal, the customer has
+          selected one vendor from those who have confirmed and transferred the reward to the smart contract.</p>
+        <p class="modal__text">When both agree that the deal is complete, the rewards are transferred to the
+          vendor's
+          account.</p>
+        <p class="modal__text">If disputes arise, an arbitrator (service administrator or expert) decides what to do
+          with the fee: return it to the
+          customer, transfer it to the vendor, split the reward, or put the deal back to work.</p>
+        <p class="modal__text"><strong>Fee</strong>$10 - Flat service fee for any deal <br> 2% min $8 - Non
+          refundable
+          Arbitrage Insurance</p>
+      </div>
 
-        </div>
+    </div>
 
-        <!-- Deadline Info -->
-        <div class="modal__container" role="dialog" aria-modal="true" data-target="deadline-info">
-          <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
-            <svg class="modal__close-icon">
-              <use xlink:href="img/sprite.svg#close"></use>
-            </svg>
-          </button>
-          <h2 class="modal__title">
-            Deadline is important
-          </h2>
-          <div class="modal__body">
-            <p class="modal__text">Missing a deadline may be the cause to cancel the deal with a refund to the customer.
-            </p>
-          </div>
+    <!-- Deadline Info -->
+    <div class="modal__container" role="dialog" aria-modal="true" data-target="deadline-info">
+      <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h2 class="modal__title">
+        Deadline is important
+      </h2>
+      <div class="modal__body">
+        <p class="modal__text">Missing a deadline may be the cause to cancel the deal with a refund to the customer.
+        </p>
+      </div>
 
-        </div>
+    </div>
+
+
+    <!-- Connect wallet -->
+    <div class="modal__container" role="dialog" aria-modal="true" data-target="connect-wallet">
+      <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h2 class="modal__title">
+        Connect your wallet
+      </h2>
+      <div class="modal__body">
+        <button class="modal__button button" type="button">Claim reward and fee 298.4 USDT</button>
 
       </div>
+
+    </div>
+  </div>
+
+
 </body>
 
 </html>
