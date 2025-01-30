@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Deals</title>
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <script defer src="js/main.js"></script>
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <div class="page deals">
+      <div class="body deals__body">
+        <a href="#" class="deals__user user">
+          <img src="./img/avatars/01.jpg" alt="ava" class="user__photo">
+          <div class="user__name">Кирилл</div>
+          <div class="user__arrow">
+            <svg class="user__arrow-icon">
+              <use xlink:href="img/sprite.svg#arrow"></use>
+            </svg>
+          </div>
+        </a>
+        <ul class="deals__stories stories">
+          <li class="stories__item">
+            <a href="#" class="stories__link">
+              <img src="./img/stories/01.jpg" alt="" class="stories__image">
+              <div class="stories__overlay">Как работает безопасная сделка</div>
+            </a>
+          </li>
+          <li class="stories__item">
+            <a href="#" class="stories__link">
+              <img src="./img/stories/02.jpg" alt="" class="stories__image">
+              <div class="stories__overlay">Спорные моменты в ходе сделки</div>
+            </a>
+          </li>
+          <li class="stories__item">
+            <a href="#" class="stories__link">
+              <img src="./img/stories/03.jpg" alt="" class="stories__image">
+              <div class="stories__overlay">Какая комиссия у приложения</div>
+            </a>
+          </li>
+          <li class="stories__item">
+            <a href="#" class="stories__link">
+              <img src="./img/stories/01.jpg" alt="" class="stories__image">
+              <div class="stories__overlay">Как работает безопасная сделка</div>
+            </a>
+          </li>
+          <li class="stories__item">
+            <a href="#" class="stories__link">
+              <img src="./img/stories/02.jpg" alt="" class="stories__image">
+              <div class="stories__overlay">Спорные моменты в ходе сделки</div>
+            </a>
+          </li>
+        </ul>
+        <div class="deals__cards cards">
+          <div class="cards__body">
+            <div class="cards__filters filters">
+
+              <div class="filters__tabs options options--row">
+                <div class="options__item">
+                  <input id="all-tab" type="radio" name="role-tab" class="options__input" checked>
+                  <label for="all-tab" class="options__label options__label--role">All deals</label>
+                </div>
+                <div class="options__item">
+                  <input id="customer-tab" type="radio" name="role-tab" class="options__input">
+                  <label for="customer-tab" class="options__label options__label--role">Customer</label>
+                </div>
+                <div class="options__item">
+                  <input id="vendor-tab" type="radio" name="role-tab" class="options__input">
+                  <label for="vendor-tab" class="options__label options__label--role">Vendor</label>
+                </div>
+              </div>
+              <button class="filters__button dropdown-btn">
+                <svg class="filters__button-icon">
+                  <use xlink:href="img/sprite.svg#sliders-horizontal"></use>
+                </svg>
+              </button>
+              <div class="filters__dropdown dropdown">
+                <div class="dropdown__column options">
+                  <div class="options__item">
+                    <input id="all" type="radio" name="role" class="options__input" checked>
+                    <label for="all" class="options__label">All deals</label>
+                  </div>
+                  <div class="options__item">
+                    <input id="customer" type="radio" name="role" class="options__input">
+                    <label for="customer" class="options__label">Customer</label>
+                  </div>
+                  <div class="options__item">
+                    <input id="vendor" type="radio" name="role" class="options__input">
+                    <label for="vendor" class="options__label">Vendor</label>
+                  </div>
+                </div>
+                <div class="dropdown__column">
+                  <div class="checkbox">
+                    <input id="status1" type="checkbox" name="status-draft" class="checkbox__input ">
+                    <label for="status1" class="checkbox__label">Draft</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status2" type="checkbox" name="status-inWork" class="checkbox__input ">
+                    <label for="status2" class="checkbox__label">In work</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status3" type="checkbox" name="status-verify" class="checkbox__input ">
+                    <label for="status3" class="checkbox__label">To verify</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status4" type="checkbox" name="status-completed" class="checkbox__input ">
+                    <label for="status4" class="checkbox__label">Completed</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status5" type="checkbox" name="status-cancelletion" class="checkbox__input ">
+                    <label for="status5" class="checkbox__label">Cancelletion</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status6" type="checkbox" name="status-canceled" class="checkbox__input ">
+                    <label for="status6" class="checkbox__label">Canceled</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status7" type="checkbox" name="status-arbitrage" class="checkbox__input ">
+                    <label for="status7" class="checkbox__label">Arbitrage</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="status8" type="checkbox" name="status-archived" class="checkbox__input ">
+                    <label for="status8" class="checkbox__label">Archived</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="cards__items">
+              <li class="cards__item item-deal">
+                <a href="#" class="item-deal__link">
+                  <img class="item-deal__ava" src="./img/avatars/01.jpg" alt="photo">
+                  <div class="item-deal__content">
+                    <div class="item-deal__row">
+                      <h2 class="item-deal__title">Оказать консультацию по развёртыванию модели Flux</h2>
+                      <div class="item-deal__price"><span>$100</span></div>
+                    </div>
+                    <div class="item-deal__row">
+                      <div class="item-deal__status waiting">Waiting for contractor confirmation</div>
+                      <button class="item-deal__chat button">
+                        <svg class="button__icon">
+                          <use xlink:href="img/sprite.svg#message-circle-more"></use>
+                        </svg>Chat</button>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="cards__item item-deal">
+                <a href="#" class="item-deal__link">
+                  <img class="item-deal__ava" src="./img/avatars/02.jpg" alt="photo">
+                  <div class="item-deal__content">
+                    <div class="item-deal__row">
+                      <h2 class="item-deal__title">Короткое название</h2>
+                      <div class="item-deal__price"><span>$100</span></div>
+                    </div>
+                    <div class="item-deal__row">
+                      <div class="item-deal__status finalize">Finalize the draft</div>
+                      <button class="item-deal__chat button">
+                        <svg class="button__icon">
+                          <use xlink:href="img/sprite.svg#message-circle-more"></use>
+                        </svg>Chat</button>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="cards__item item-deal">
+                <a href="#" class="item-deal__link">
+                  <img class="item-deal__ava" src="./img/avatars/03.jpg" alt="photo">
+                  <div class="item-deal__content">
+                    <div class="item-deal__row">
+                      <h2 class="item-deal__title">Оказать консультацию по развёртыванию
+                        модели Flux</h2>
+                      <div class="item-deal__price"><span>$100</span></div>
+                    </div>
+                    <div class="item-deal__row">
+                      <div class="item-deal__status work">In work</div>
+                      <button class="item-deal__chat button">
+                        <svg class="button__icon">
+                          <use xlink:href="img/sprite.svg#message-circle-more"></use>
+                        </svg>Chat</button>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="cards__btn-add">
+            <svg class="cards__btn-add-icon">
+              <use xlink:href="img/sprite.svg#plus"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

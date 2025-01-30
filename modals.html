@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Модальные окна</title>
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <script defer src="js/main.js"></script>
+</head>
+
+
+<body>
+
+
+  <div class="container-modal">
+    <div class="buttons">
+      <button class="button" data-path="reward-setting" data-animation="fadeInUp">Reward Setting</button>
+    </div>
+
+    <div class="modal">
+
+      <!-- Reward Setting -->
+      <div class="modal__container" role="dialog" aria-modal="true" data-target="reward-setting">
+        <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+          <svg class="modal__close-icon">
+            <use xlink:href="img/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <h2 class="modal__title">
+          Пропорции вознаграждения
+        </h2>
+        <div class="modal__body">
+          <p class="modal__text">Уточните, в каких пропорциях делить Reward
+          </p>
+          <div class="modal__form form">
+            <div class="form__items">
+
+              <div class="form__input input input--floating">
+                <input class="input__control" id="customer" type="text" name="" value="50" placeholder="Заказчику, %">
+                <label class="input__label" for="customer">Заказчику, %</label>
+              </div>
+              <div class="form__input input input--floating">
+                <input class="input__control" id="customer" type="text" name="" value="50" placeholder="Заказчику, %">
+                <label class="input__label" for="customer">Исполнителю, %</label>
+              </div>
+              <button class="form__button button" type="button">Split reward</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</body>
+<style>
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .button {
+      width: 200px;
+      height: 50px;
+    }
+  }
+
+  .container-modal {
+    padding: 50px;
+  }
+
+</style>
+
+</html>

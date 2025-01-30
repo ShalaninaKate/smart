@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Offer candidates</title>
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <script defer src="js/main.js"></script>
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <form class="page blank-deal form">
+      <div class="body blank-deal__body">
+
+        <div class="blank-deal__header">
+          <a href="#" class="blank-deal__link-back link-back">
+            <svg class="link-back__icon">
+              <use xlink:href="img/sprite.svg#arrow"></use>
+            </svg>
+          </a>
+          <h2 class="blank-deal__title">Сreate deal as</h2>
+          <div class="blank-deal__tabs options options--row">
+            <div class="options__item">
+              <input id="customer-tab" type="radio" name="role-tab" class="options__input" checked>
+              <label for="customer-tab" class="options__label options__label--role">Customer</label>
+            </div>
+            <div class="options__item">
+              <input id="vendor" type="radio" name="role-tab" class="options__input">
+              <label for="vendor" class="options__label options__label--role">Vendor</label>
+            </div>
+          </div>
+        </div>
+        <div class="form__items">
+          <div class="form__input input input--textarea input--floating">
+            <textarea class="input__control textarea" name="" id="" placeholder="Deal details"></textarea>
+            <label class="input__label" for="customer">Deal details</label>
+          </div>
+          <div class="form__input input input--floating">
+            <input class="input__control" id="customer" type="text" name="" value="Кирилл" placeholder="Customer (You)">
+            <label class="input__label" for="customer">Customer (You)</label>
+          </div>
+          <div class="form__input input">
+            <input class="input__control" id="customer" type="text" name="" value="Вадим Мариупольский" readonly
+              placeholder="">
+            <label class="input__label" for="customer">Vendor</label>
+             <div class="input__actions">
+
+               <button class="input__btn">
+                <svg class="input__btn-icon input__btn-icon--arrow">
+                  <use xlink:href="img/sprite.svg#arrow"></use>
+                </svg>
+               </button>
+             </div>
+          </div>
+
+          <div class="form__input input">
+            <input class="input__control input__control--padding" id="reward" type="text" name="" value=""
+              placeholder="0">
+            <label class="input__label" for="reward">Reward</label>
+            <div class="input__actions">
+              <span class="input__text">Not send yet</span>
+              <button class="input__btn" data-path="reward-info" data-animation="fadeInUp">
+                <img class="input__btn-icon" src="./img/svg/info.svg" alt="info">
+              </button>
+            </div>
+          </div>
+          <div class="form__input input">
+            <input class="input__control input__control--padding" id="date" type="text" name="" value=""
+              placeholder="DD.MM.YYYY">
+            <label class="input__label" for="date">Deadline</label>
+            <div class="input__actions">
+              <div class="input__checkbox checkbox">
+                <input id="important" type="checkbox" name="important" class="checkbox__input ">
+                <label for="important" class="checkbox__label"><span
+                    class="checkbox__label-text">Important</span></label>
+              </div>
+              <button class="input__btn" data-path="deadline-info" data-animation="fadeInUp">
+                <img class="input__btn-icon" src="./img/svg/info.svg" alt="info">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blank-deal__actions actions">
+        <div class="actions__items">
+
+          <div class="actions__block ">
+            <div class="actions__buttons">
+              <button class="actions__button button" type="button">
+                <svg class="button__icon">
+                  <use xlink:href="img/sprite.svg#message-circle-more"></use>
+                </svg>Deal chat</button>
+              <button class="actions__button button button--action actions-open" type="button">
+                <svg class="button__icon">
+                  <use xlink:href="img/sprite.svg#arrow"></use>
+                </svg>Actions</button>
+            </div>
+          </div>
+          <div class="actions__block">
+            <div class="actions__title">Confirm vendor and deposit reward</div>
+            <button class="actions__button button" type="button">Deposit reward</button>
+          </div>
+          <div class="actions__block">
+            <div class="actions__title">Send the link in a message or attach to the task</div>
+            <button class="actions__button button active" type="button">
+              <svg class="button__icon">
+                <use xlink:href="img/sprite.svg#copy"></use>
+              </svg>Copy Link</button>
+            <div class="actions__buttons">
+              <button class="actions__button button active" type="button">
+                <svg class="button__icon">
+                  <use xlink:href="img/sprite.svg#trash"></use>
+                </svg>Delete</button>
+              <button class="actions__button button active" type="button">
+                <svg class="button__icon">
+                  <use xlink:href="img/sprite.svg#pencil"></use>
+                </svg>Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+      <div class="modal">
+        <!-- Reward info -->
+        <div class="modal__container" role="dialog" aria-modal="true" data-target="reward-info">
+          <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+            <svg class="modal__close-icon">
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+          <h2 class="modal__title">
+            Reward and Fee
+          </h2>
+          <div class="modal__body">
+
+            <p class="modal__text"><strong>The reward is managed by a smart contract.</strong>The deal starts when the
+              vendor has confirmed the deal, the customer has
+              selected one vendor from those who have confirmed and transferred the reward to the smart contract.</p>
+            <p class="modal__text">When both agree that the deal is complete, the rewards are transferred to the
+              vendor's
+              account.</p>
+            <p class="modal__text">If disputes arise, an arbitrator (service administrator or expert) decides what to do
+              with the fee: return it to the
+              customer, transfer it to the vendor, split the reward, or put the deal back to work.</p>
+            <p class="modal__text"><strong>Fee</strong>$10 - Flat service fee for any deal <br> 2% min $8 - Non
+              refundable
+              Arbitrage Insurance</p>
+          </div>
+
+        </div>
+
+        <!-- Deadline Info -->
+        <div class="modal__container" role="dialog" aria-modal="true" data-target="deadline-info">
+          <button type="button" class=" modal__close js-modal-close" aria-label="close modal">
+            <svg class="modal__close-icon">
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+          <h2 class="modal__title">
+            Deadline is important
+          </h2>
+          <div class="modal__body">
+            <p class="modal__text">Missing a deadline may be the cause to cancel the deal with a refund to the customer.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+</body>
+
+</html>

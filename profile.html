@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <script defer src="js/main.js"></script>
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <div class="page profile ">
+      <div class="body profile__body">
+
+        <div class="profile__header">
+          <a href="#" class="profile__link-back link-back">
+            <svg class="link-back__icon">
+              <use xlink:href="img/sprite.svg#arrow"></use>
+            </svg>
+          </a>
+          <h2 class="profile__title">Profile</h2>
+        </div>
+        <div class="profile__info">
+          <div class="profile__user">
+            <img class="profile__user-ava" src="./img/avatars/01.jpg" alt="ava">
+            <div class="profile__user-name">Кирилл Печенегинский</div>
+          </div>
+          <a href="#" class="profile__user-out">
+            <svg class="profile__user-out-icon">
+              <use xlink:href="img/sprite.svg#log-out"></use>
+            </svg>
+            Log out</a>
+        </div>
+        <div class="profile__settings">
+          <div class="profile__settings-item">
+            <h3 class="profile__settings-title">Connected wallet address <span class="profile__settings-address">Not
+                connected</span></h3>
+            <div class="profile__settings-buttons">
+              <button class="profile__settings-button button" type="button">Connect</button>
+              <button class="profile__button button disable" type="button">
+                <svg class="button__icon">
+                  <use xlink:href="img/sprite.svg#copy"></use>
+                </svg>Copy Wallet</button>
+            </div>
+          </div>
+          <div class="profile__settings-item">
+            <h3 class="profile__settings-title">Language</h3>
+            <div class="profile__settings-tabs options options--lang">
+              <div class="options__item">
+                <input id="ru" type="radio" name="language" class="options__input" checked>
+                <label for="ru" class="options__label options__label--lang">Русский</label>
+              </div>
+              <div class="options__item">
+                <input id="en" type="radio" name="language" class="options__input">
+                <label for="en" class="options__label options__label--lang">English</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile__actions">
+        <button class="profile__button button" type="button">
+          <svg class="button__icon">
+            <use xlink:href="img/sprite.svg#support"></use>
+          </svg>Support</button>
+        <a href="#" class="profile__terms">Terms of Usage</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+</body>
+
+</html>
