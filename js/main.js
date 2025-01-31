@@ -296,10 +296,12 @@ if (textarea) {
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelector(".dropdown-btn");
   const dropdown = document.querySelector(".dropdown");
-  button.addEventListener("click", function () {
-    dropdown.classList.toggle("show");
-    button.classList.toggle("active");
-  });
+  if (button) {
+    button.addEventListener("click", function () {
+      dropdown.classList.toggle("show");
+      button.classList.toggle("active");
+    });
+  }
 
   // Закрытие dropdown при клике вне его области
   document.addEventListener("click", function (event) {
@@ -324,6 +326,22 @@ document.addEventListener("DOMContentLoaded", function () {
       button.classList.remove("show");
     }
   });
+});
+
+// script.js
+
+// Проверяем предпочитаемую тему пользователя и устанавливаем тему на странице
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+// Слушаем изменения системных настроек и переключаем тему в реальном времени
+window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+  if (e.matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
 });
 })();
 

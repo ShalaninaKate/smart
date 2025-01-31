@@ -14,11 +14,10 @@
 </head>
 
 
-<body>
+<body class="">
   <div class="wrapper">
     <form class="page blank-deal form">
       <div class="body blank-deal__body">
-
         <div class="blank-deal__header">
           <a href="#" class="blank-deal__link-back link-back">
             <svg class="link-back__icon">
@@ -51,19 +50,6 @@
               placeholder="">
             <label class="input__label" for="customer">Vendor</label>
           </div>
-
-          <div class="form__input input">
-            <input class="input__control " id="customer" type="text" name="" value="Вадим Мариупольский" readonly
-              placeholder="">
-            <label class="input__label" for="customer">Vendor</label>
-            <div class="input__actions">
-              <button class="input__btn">
-                <svg class="input__btn-icon">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
           <div class="form__input input">
             <input class="input__control input__control--padding" id="reward" type="text" name="" value=""
               placeholder="0">
@@ -71,7 +57,9 @@
             <div class="input__actions">
               <span class="input__text">Not send yet</span>
               <button class="input__btn" data-path="reward-info" data-animation="fadeInUp">
-                <img class="input__btn-icon" src="./img/svg/info.svg" alt="info">
+                <svg class="input__btn-icon input__btn-icon--info">
+                  <use xlink:href="img/sprite.svg#info"></use>
+                </svg>
               </button>
             </div>
           </div>
@@ -85,8 +73,10 @@
                 <label for="important" class="checkbox__label"><span
                     class="checkbox__label-text">Important</span></label>
               </div>
-              <button class="input__btn" data-path="deadline-info" data-animation="fadeInUp">
-                <img class="input__btn-icon" src="./img/svg/info.svg" alt="info">
+              <button class="input__btn" data-path="reward-info" data-animation="fadeInUp">
+                <svg class="input__btn-icon input__btn-icon--info">
+                  <use xlink:href="img/sprite.svg#info"></use>
+                </svg>
               </button>
             </div>
           </div>

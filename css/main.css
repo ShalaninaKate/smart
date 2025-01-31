@@ -1,21 +1,37 @@
+@charset "UTF-8";
 :root {
   --font-family: "SFProText", sans-serif;
   --second-family: "SFPro", sans-serif;
-  --white: #fff;
+  --main-color: #2d1e2f;
+  --background: #fff;
+  --btn-text: #fff;
+  --bg: #efeff4;
   --white-100: rgba(255, 255, 255, 0.1);
-  --dark-purple: #2d1e2f;
+  --white-400: rgba(255, 255, 255, 0.4);
   --rose-quartz-400: #aba5ac;
   --dark-purple-400: rgba(45, 30, 47, 0.4);
   --dark-purple-500: rgba(45, 30, 47, 0.5);
   --dark-purple-100: rgba(45, 30, 47, 0.1);
-  --dark-purple-50: rgba(45, 30, 47, 0.05);
+  --dark-purple-50: rgba(45, 30, 47, 0.051);
+  --box-shadow: rgba(45, 30, 47, 0.1);
   --robin-egg-blue: #06bcc1;
   --robin-egg-blue-500: rgba(6, 188, 193, 0.5);
   --robin-egg-blue-200: rgba(6, 188, 193, 0.2);
-  --white-400: rgba(255, 255, 255, 0.4);
   --aureolin: #f9e900;
   --rose-red: #cf1259;
   --rose-red-100: rgba(207, 18, 89, 0.1);
+}
+
+/* Определение CSS переменных для тёмной темы */
+[data-theme=dark] {
+  --bg: #0f0f0f;
+  --main-color: #ffffff;
+  --background: rgba(255, 255, 255, 0.1);
+  --btn-text: #2d1e2f;
+  --dark-purple-50: rgba(255, 255, 255, 0.1);
+  --white-400: #2d1e2f;
+  --dark-purple-100: rgba(255, 255, 255, 0.1);
+  --box-shadow: rgba(0, 0, 0, 0.8);
 }
 
 /* stylelint-disable */
@@ -136,7 +152,7 @@ body {
 }
 
 body {
-  color: var(--dark-purple);
+  color: var(--main-color);
   line-height: 1;
   font-family: var(--font-family, sans-serif);
   font-size: 0.875rem;
@@ -191,7 +207,7 @@ input[type=number]:focus {
 .wrapper {
   padding: 1.25rem 1.25rem 0;
   min-height: 100%;
-  background: #efeff4;
+  background: var(--bg);
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
@@ -242,17 +258,17 @@ input[type=number]:focus {
   height: 3rem;
   border-radius: 8px;
   background: var(--robin-egg-blue);
-  color: var(--white);
+  color: var(--btn-text);
   font-weight: 600;
   -webkit-transition: background 0.3s ease, color 0.3s ease;
   transition: background 0.3s ease, color 0.3s ease;
 }
 .button--action {
   background: var(--dark-purple-50);
-  color: var(--dark-purple);
+  color: var(--main-color);
 }
 .button--action .button__icon {
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
   stroke-width: 1.25px;
   fill: none;
   -webkit-transform: rotate(-180deg);
@@ -273,14 +289,14 @@ input[type=number]:focus {
   flex-shrink: 0;
   width: 1rem;
   height: 1rem;
-  stroke: var(--white);
+  stroke: var(--btn-text);
   stroke-width: 1.25px;
   fill: none;
   -webkit-transition: stroke 0.3s ease;
   transition: stroke 0.3s ease;
 }
 .button__icon circle {
-  fill: var(--white);
+  fill: var(--btn-text);
   -webkit-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
@@ -291,11 +307,11 @@ input[type=number]:focus {
 }
 .button.disable .button__icon {
   stroke-opacity: 0.1;
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
   fill: none;
 }
 .button.disable .button__icon circle {
-  fill: var(----dark-purple);
+  fill: var(--main-color);
 }
 .button.active {
   background: var(--robin-egg-blue-200);
@@ -324,7 +340,7 @@ input[type=number]:focus {
   justify-content: center;
   height: 2rem;
   border-radius: 8px;
-  background: var(--white);
+  background: var(--btn-text);
   color: var(--rose-quartz-400);
   -webkit-transition: background 0.3s ease, color 0.3s ease;
   transition: background 0.3s ease, color 0.3s ease;
@@ -350,7 +366,7 @@ input[type=number]:focus {
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--background);
 }
 .link-back__icon {
   -webkit-transform: rotate(90deg);
@@ -359,7 +375,7 @@ input[type=number]:focus {
   width: 1rem;
   height: 1rem;
   fill: none;
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
 }
 
 .notification {
@@ -370,9 +386,9 @@ input[type=number]:focus {
   width: 100%;
   min-height: 3.5rem;
   border-radius: 8px;
-  -webkit-box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  background: var(--white);
+  -webkit-box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  background: var(--btn-text);
 }
 .notification__text {
   line-height: 143%;
@@ -399,7 +415,7 @@ input[type=number]:focus {
   width: 1rem;
   height: 1rem;
   fill: none;
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
   stroke-width: 1.25;
 }
 
@@ -438,7 +454,7 @@ input[type=number]:focus {
   position: relative;
   width: 43.75rem;
   border-radius: 4px;
-  background: var(--white);
+  background: var(--btn-text);
   cursor: default;
   display: none;
 }
@@ -472,7 +488,7 @@ input[type=number]:focus {
   width: 1rem;
   height: 1rem;
   fill: none;
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
   stroke-width: 1.25px;
 }
 
@@ -577,9 +593,9 @@ input[type=number]:focus {
   right: 0;
   left: 0;
   z-index: 100;
-  -webkit-box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  background: var(--white);
+  -webkit-box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  background: var(--background);
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -714,8 +730,8 @@ input:-webkit-autofill {
   min-height: 3.5rem;
   font-size: 0.875rem;
   line-height: 145%;
-  color: var(--dark-purple);
-  background: var(--white);
+  color: var(--main-color);
+  background: var(--background);
   border: 2px solid transparent;
   border-radius: 8px;
   -webkit-transition: border-color 0.3s ease-in-out;
@@ -791,7 +807,11 @@ input:-webkit-autofill {
   width: 1rem;
   height: 1rem;
   fill: none;
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
+}
+.input__btn-icon--info {
+  fill: var(--main-color);
+  stroke: none;
 }
 .input__text {
   font-size: 0.875rem;
@@ -961,7 +981,7 @@ input:-webkit-autofill {
 .options__input:checked + .options__label--lang {
   border: 2px solid var(--robin-egg-blue-500);
   color: var(--robin-egg-blue);
-  background: var(--white);
+  background: var(--background);
 }
 .options__label {
   display: -webkit-box;
@@ -999,7 +1019,7 @@ input:-webkit-autofill {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: var(--white);
+  background: #fff;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
@@ -1010,7 +1030,7 @@ input:-webkit-autofill {
 }
 .options__label--role, .options__label--lang {
   padding: 0.375rem 0.5rem;
-  background: var(--white);
+  background: var(--background);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1105,7 +1125,7 @@ input:-webkit-autofill {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--background);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1122,7 +1142,7 @@ input:-webkit-autofill {
   width: 1rem;
   height: 1rem;
   fill: none;
-  stroke: var(--dark-purple);
+  stroke: var(--main-color);
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -1138,7 +1158,6 @@ input:-webkit-autofill {
 }
 @media (max-width: 48em) {
   .stories {
-    border-radius: 0;
     margin-left: -1.25rem;
     margin-right: -1.25rem;
     padding-right: 1.25rem;
@@ -1158,7 +1177,7 @@ input:-webkit-autofill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 8px;
+  border-radius: 9px;
   overflow: hidden;
 }
 .stories__image {
@@ -1191,7 +1210,7 @@ input:-webkit-autofill {
   gap: 0.5rem;
 }
 .filters__button {
-  background: var(--white);
+  background: var(--background);
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1209,12 +1228,12 @@ input:-webkit-autofill {
   background: var(--robin-egg-blue);
 }
 .filters__button.active .filters__button-icon {
-  fill: var(--white);
+  fill: var(--btn-text);
 }
 .filters__button-icon {
   width: 1rem;
   height: 1rem;
-  fill: var(--dark-purple);
+  fill: var(--main-color);
   -webkit-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
@@ -1293,7 +1312,7 @@ input:-webkit-autofill {
   width: 1rem;
   height: 1rem;
   fill: none;
-  stroke: var(--white);
+  stroke: var(--btn-text);
   stroke-width: 1.25;
   -webkit-transition: stroke 0.3s ease;
   transition: stroke 0.3s ease;
@@ -1309,7 +1328,7 @@ input:-webkit-autofill {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: start;
-  background: var(--white);
+  background: var(--background);
   border-radius: 4px;
 }
 .item-deal__ava {
@@ -1391,7 +1410,7 @@ input:-webkit-autofill {
   background: var(--robin-egg-blue-500);
 }
 .item-deal__status.pending:before {
-  background: var(--dark-purple);
+  background: var(--main-color);
 }
 .item-deal__status.expected-canceled:before {
   background: var(--rose-red-100);
@@ -1426,9 +1445,9 @@ input:-webkit-autofill {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
-  -webkit-box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  background: var(--white);
+  -webkit-box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  background: var(--btn-text);
   border-radius: 4px;
   padding: 1rem;
   opacity: 0;
@@ -1457,7 +1476,7 @@ input:-webkit-autofill {
   gap: 0.5rem;
 }
 .dropdown__column .checkbox__label {
-  color: var(--dark-purple);
+  color: var(--main-color);
 }
 
 .blank-deal__header {
@@ -1502,9 +1521,9 @@ input:-webkit-autofill {
   right: 0;
   left: 0;
   z-index: 100;
-  -webkit-box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  box-shadow: 0 -4px 12px 0 var(--dark-purple-100);
-  background: var(--white);
+  -webkit-box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  box-shadow: 0 -4px 12px 0 var(--box-shadow);
+  background: var(--background);
   border-radius: 4px;
   min-height: 5rem;
   display: -webkit-box;
@@ -1559,7 +1578,7 @@ input:-webkit-autofill {
   justify-content: center;
   font-weight: 600;
   line-height: 143%;
-  color: var(--white);
+  color: var(--btn-text);
   background: var(--robin-egg-blue);
   border-radius: 4px;
 }
@@ -1727,7 +1746,7 @@ input:-webkit-autofill {
   gap: 1rem;
 }
 .profile__settings-item {
-  background: var(--white);
+  background: var(--background);
   border-radius: 4px;
   padding: 1rem;
 }
