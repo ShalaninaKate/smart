@@ -1523,7 +1523,7 @@ input:-webkit-autofill {
   z-index: 100;
   -webkit-box-shadow: 0 -4px 12px 0 var(--box-shadow);
   box-shadow: 0 -4px 12px 0 var(--box-shadow);
-  background: var(--background);
+  background: var(--btn-text);
   border-radius: 4px;
   min-height: 5rem;
   display: -webkit-box;
