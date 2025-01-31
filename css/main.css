@@ -379,7 +379,7 @@ input[type=number]:focus {
 }
 
 .notification {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2.8125rem 0.5rem 1rem;
   position: absolute;
   z-index: 50;
   top: -0.9375rem;
@@ -595,7 +595,7 @@ input[type=number]:focus {
   z-index: 100;
   -webkit-box-shadow: 0 -4px 12px 0 var(--box-shadow);
   box-shadow: 0 -4px 12px 0 var(--box-shadow);
-  background: var(--background);
+  background: var(--btn-text);
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
