@@ -769,6 +769,24 @@ input:-webkit-autofill {
   outline: 0;
   border-color: var(--robin-egg-blue-500);
 }
+.input__control--customer {
+  cursor: pointer;
+}
+.input__control--customer::-webkit-input-placeholder {
+  color: var(--main-color);
+}
+.input__control--customer::-moz-placeholder {
+  color: var(--main-color);
+}
+.input__control--customer:-ms-input-placeholder {
+  color: var(--main-color);
+}
+.input__control--customer::-ms-input-placeholder {
+  color: var(--main-color);
+}
+.input__control--customer::placeholder {
+  color: var(--main-color);
+}
 .input__label {
   display: block;
   position: absolute;
@@ -806,6 +824,10 @@ input:-webkit-autofill {
 .input__btn-icon {
   width: 1rem;
   height: 1rem;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   fill: none;
   stroke: var(--main-color);
 }
@@ -817,6 +839,18 @@ input:-webkit-autofill {
   font-size: 0.875rem;
   line-height: 143%;
   color: var(--rose-quartz-400);
+}
+.input.show .dropdown-customer {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.input.show .input__btn-icon {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
 .textarea {
@@ -908,6 +942,33 @@ input:-webkit-autofill {
   flex-grow: 1;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.dropdown-customer {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  top: calc(100% + 0.125rem);
+  -webkit-box-shadow: 0 8px 12px var(--box-shadow);
+  box-shadow: 0 8px 12px var(--box-shadow);
+  background: var(--btn-text);
+  border-radius: 8px;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(0, -0.625rem);
+  -ms-transform: translate(0, -0.625rem);
+  transform: translate(0, -0.625rem);
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.dropdown-customer__item {
+  cursor: pointer;
+}
+.dropdown-customer__item:not(:last-child) {
+  padding-bottom: 1rem;
 }
 
 .options {
@@ -1451,6 +1512,7 @@ input:-webkit-autofill {
   border-radius: 4px;
   padding: 1rem;
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translate(0, -0.625rem);
   -ms-transform: translate(0, -0.625rem);
   transform: translate(0, -0.625rem);
@@ -1461,6 +1523,7 @@ input:-webkit-autofill {
 }
 .dropdown.show {
   opacity: 1;
+  visibility: visible;
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);

@@ -275,74 +275,97 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
 
-const forms = document.querySelectorAll('form');
-if (forms) {
-  forms.forEach(form => {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-    });
-  });
-}
-const textarea = document.querySelector('.textarea');
-if (textarea) {
-  textarea.addEventListener('input', function () {
-    // this.style.height = 'auto';
-    this.style.height = this.scrollHeight + 'px';
-
-    // Принудительное обновление стиля
-    this.style.overflowY = 'hidden';
-  });
-}
-document.addEventListener("DOMContentLoaded", function () {
+function initButtonDropdown() {
   const button = document.querySelector(".dropdown-btn");
   const dropdown = document.querySelector(".dropdown");
-  if (button) {
-    button.addEventListener("click", function () {
-      dropdown.classList.toggle("show");
-      button.classList.toggle("active");
-    });
-  }
-
-  // Закрытие dropdown при клике вне его области
+  if (!button || !dropdown) return;
+  button.addEventListener("click", function () {
+    dropdown.classList.toggle("show");
+    button.classList.toggle("active");
+  });
   document.addEventListener("click", function (event) {
     if (!button.contains(event.target) && !dropdown.contains(event.target)) {
       dropdown.classList.remove("show");
       button.classList.remove("active");
     }
   });
-});
-document.addEventListener("DOMContentLoaded", function () {
+}
+function initDropdown() {
+  const dropdown = document.querySelector(".input-customer");
+  if (!dropdown) return;
+  const dropdownInput = document.getElementById("dropdownInput");
+  const dropdownButton = document.getElementById("dropdownButton");
+  const dropdownItems = document.querySelectorAll(".dropdown-customer__item");
+  function toggleDropdown() {
+    // Тогглим класс "show" на контейнере .input-customer, чтобы открыть/закрыть меню
+    dropdown.classList.toggle("show");
+  }
+  function selectItem(event) {
+    dropdownInput.value = event.target.textContent;
+    // Убираем класс "show" после выбора элемента, скрывая меню
+    dropdown.classList.remove("show");
+  }
+  function closeDropdown(event) {
+    if (!dropdown.contains(event.target)) {
+      // Убираем класс "show" при клике вне дропдауна
+      dropdown.classList.remove("show");
+    }
+  }
+  dropdownInput.addEventListener("click", toggleDropdown);
+  dropdownButton.addEventListener("click", toggleDropdown);
+  dropdownItems.forEach(item => item.addEventListener("click", selectItem));
+  document.addEventListener("click", closeDropdown);
+}
+function initTextarea() {
+  const textarea = document.querySelector('.textarea');
+  if (!textarea) return;
+  textarea.addEventListener('input', function () {
+    this.style.height = this.scrollHeight + 'px';
+    this.style.overflowY = 'hidden';
+  });
+}
+function initForms() {
+  const forms = document.querySelectorAll('form');
+  if (!forms) return;
+  forms.forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+    });
+  });
+}
+function initActionsDropdown() {
   const button = document.querySelector(".actions-open");
   const actions = document.querySelector(".actions");
+  if (!button || !actions) return;
   button.addEventListener("click", function () {
     actions.classList.toggle("show");
     button.classList.toggle("show");
   });
-
-  // Закрытие dropdown при клике вне его области
   document.addEventListener("click", function (event) {
     if (!button.contains(event.target) && !actions.contains(event.target)) {
       actions.classList.remove("show");
       button.classList.remove("show");
     }
   });
-});
-
-// script.js
-
-// Проверяем предпочитаемую тему пользователя и устанавливаем тему на странице
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.documentElement.setAttribute('data-theme', 'dark');
 }
-
-// Слушаем изменения системных настроек и переключаем тему в реальном времени
-window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-  if (e.matches) {
+function initThemeSwitcher() {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.removeAttribute('data-theme');
   }
-});
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (e.matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  });
+}
+initButtonDropdown();
+initDropdown();
+initTextarea();
+initForms();
+initActionsDropdown();
+initThemeSwitcher();
 })();
 
 /******/ })()
