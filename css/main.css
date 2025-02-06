@@ -966,6 +966,7 @@ input:-webkit-autofill {
 }
 .dropdown-customer__item {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .dropdown-customer__item:not(:last-child) {
   padding-bottom: 1rem;
