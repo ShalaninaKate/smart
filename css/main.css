@@ -789,9 +789,13 @@ input:-webkit-autofill {
 }
 .input__control:focus {
   font-size: 0.875rem;
-  outline: 0;
+  outline: none;
   -webkit-box-shadow: 0 0 0 2px var(--robin-egg-blue-500);
   box-shadow: 0 0 0 2px var(--robin-egg-blue-500);
+}
+.input__control:active {
+  font-size: 0.875rem;
+  outline: none;
 }
 .input__control--customer {
   cursor: pointer;
