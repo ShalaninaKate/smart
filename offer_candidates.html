@@ -38,8 +38,7 @@
           </div>
         </div>
         <div class="form__items">
-          <div class="form__input input input--textarea input--floating error">
-            <span class="error-text">Error </span>
+          <div class="form__input input input--textarea input--floating">
             <textarea class="input__control textarea" name="" id="" placeholder="Deal details"></textarea>
             <label class="input__label" for="customer">Deal details</label>
           </div>
@@ -48,11 +47,11 @@
             <label class="input__label" for="customer">Customer (You)</label>
           </div>
           <div class="form__input form__input input input input-customer">
-            <input id="dropdownInput" class="input__control input__control--customer" type="text" name="" value="" readonly
-              placeholder="Choose from 2 candidates">
-            <label class="input__label" >Vendor</label>
+            <input id="dropdownInput" class="input__control input__control--customer" type="text" name="" value=""
+              readonly placeholder="Choose from 2 candidates">
+            <label class="input__label">Vendor</label>
             <div class="input__actions">
-              <button id="dropdownButton" class="input__btn" >
+              <button id="dropdownButton" class="input__btn">
                 <svg class="input__btn-icon input__btn-icon--arrow">
                   <use xlink:href="img/sprite.svg#arrow"></use>
                 </svg>
@@ -65,7 +64,8 @@
             </ul>
           </div>
 
-          <div class="form__input input">
+          <div class="form__input input error">
+            <span class="error-text">Error </span>
             <input class="input__control input__control--padding" id="reward" type="text" name="" value=""
               placeholder="0">
             <label class="input__label" for="reward">Reward</label>
